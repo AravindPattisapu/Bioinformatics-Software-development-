@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<he ad >
+
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+	<title>JIDA</title>
+	<meta content="" name="description">
+	<meta content="" name="keywords">
+
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+	<!-- Vendor CSS Files -->
+	<link href="{{ url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+	<link href="{{ url_for('static', filename='vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+
+	<!-- Template Main CSS File -->
+	<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet"></head>
+<style>
+	.nav-item {min-width: 10rem;} ;
+
+</style>
+{# navigation bar#}
+<body>
+	{% block content %}
+	<!-- ======= Header section ======= -->
+	<header id="header" class="fixed-top d-flex align-items-center">
+	  <div class="container">
+		<div class="header-container d-flex align-items-center justify-content-between">
+		  <div class="logo">
+			<h1 class="text-light"><a href="#"><span>JIDA</span></a></h1>
+
+
+		  </div>
+
+		  <nav id="navbar" class="navbar">
+			<ul>
+			  <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+			  <li><a class="nav-link scrollto" href="#about">About</a></li>
+			  <li><a class="nav-link scrollto" href="#how_to_use">How to use</a></li>
+			  <li><a class="nav-link scrollto" href="#glossary">Glossary</a></li>
+			   <li><a class="nav-link scrollto" href="#Contact_Us">Contact Us</a></li>
+
+			  <li><a class="getstarted scrollto" href="home"target = "_blank">SNP browser</a></li>
+
+			</ul>
+			<i class="bi bi-list mobile-nav-toggle"></i>
+		  </nav><!-- .navbar -->
+
+		</div><!-- End Header Container -->
+	  </div>
+	</header><!-- End Header section  -->
+
+
+	<!-- ======= Hero Section ======= -->
+	<section id="hero" class="d-flex align-items-center">
+	  <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
+		<h1>Welcome to JIDA</h1>
+		<br>
+		<h2>Web application that retrieves SNP information for a genomic region of interest in Homo sapiens 
+            and calculates specific summary statistics for specified populations.</h2>
+	  </div>
+	</section><!-- End of Hero Section  -->
+
+
+	  <!-- ======= About Section ======= -->
+
+	  <section id="about" class="about">
+		<div class="container">
+		<h2>About :</h2>
+		  <div class="row content">
+			<div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+				
+				  <p>The user will be able to retrieve SNP information when providing the app :</p>
+			
+				  <ul>
+					<li><i class="ri-check-double-line"></i> RS ID</li>
+					<li><i class="ri-check-double-line"></i> Gene name</li>
+					<li><i class="ri-check-double-line"></i> Genomic coordinates (start and end)</li>
+					<br>
+					<p>The application will return the following information for each SNP: </p>
+
+                    <li><i class="ri-check-double-line"></i> Name (rs value)</li>
+				    <li><i class="ri-check-double-line"></i> Genomic Position</li>
+				    <li><i class="ri-check-double-line"></i> Genotype frequencies and Allele frequency (provided for each population separately)</li>
+
+			</div>
+			<div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left" data-aos-delay="200">
+			  
+				<p>If multiple SNPs are returned, the user will be able to select the population(s) and summary statistics of interest,
+					and the application will calculate them and plot their distribution in sliding windows along the region.</p>
+				<p>The summary statistics available are:</p>
+                <ul>
+				<li><i class="ri-check-double-line"></i> Genetic diversity</li>
+				<li><i class="ri-check-double-line"></i> Haplotype diversity</li>
+				<li><i class="ri-check-double-line"></i> Test against Neutrality (Tajima’s D)</li>
+				<li><i class="ri-check-double-line"></i> If multiple populations are selected, then population genetic variation (FST
+					value) for each pair of populations will be reported.</li>
+
+			</div>
+		  </div>
+
+		</div>
+	  </section><!-- End About Section -->
+
+
+	  <br><br>
+	  
+
+	  <!-- ======= How to use Section ======= -->
+
+	  <section id="how_to_use" class="how_to_use">
+		  <div class="container">
+		  <h2>How to Use : </h2>
+		  <br>
+		  <p>Click on the 'SNP Browser' loacted on the navigation bar at the top right.</p>
+		  <p>You will be directed to a new page called 'JIDA SNP Browser'</p>
+		  <p>To find your SNP's of interest please follow one of the following :</p>
+
+				<li>RS ID</li>
+				<li>Gene name or alias</li>
+				<li>Start and end positions</li>
+			    <em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chromosome = (21) by default </em>
+				<br>
+				<br>
+				<p><b>Please also select from the checkboxes : </b></p>
+
+				<li>The population(s) of interest</li>
+				<li>The summary statistics of interest</li>
+
+				<p>Please type in the window size for the statistical calculations :</p>
+				<li>The window size <em>&nbsp;&nbsp;&nbsp;(default = 3)</em></li>
+				<br>
+				<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;please click the  <b>Submit</b> button and wait for your results!</em>
+				<br>
+				<br>
+				<p><b>Results page :</b></p>
+				<p>The output will be summary statistics tables (if selected) with the option to view the graph in the <b>Show as Graph</b> button  </p>
+				<p>Two graph are produced per statistic : </p>
+				<li>Statistic value vs the populations selected </li>
+				<li>Statistics value sliding window value vs genomic position with colours for each population  </li>
+				<br>
+				<p>The <b>Download text file</b> button will produce a text file with the summary statistics </p>
+				<br>
+				<p>Below the statistics there is an SNP table which contains the following information per SNP : </p>
+				<p><b>chromosome number, genomic position, RS value, population, reference allele, alternate allele, the allele and genotype frequencies</b></p>
+
+		</div>
+	  </section><!-- End of How to use Section -->
+
+	  <br><br>
+
+
+	  <!-- ======= Glossary Section ======= -->
+
+	  <section id="glossary" class="glossary">
+		<div class="container">
+			
+		<h2>Glossary</h2>
+		<br>
+
+		<a href="https://en.wikipedia.org/wiki/Genotype_frequency"target = "_blank">Genotype frequency</a>
+		<p>Total individuals with a given genotype divided by the total number of individuals in a population.</p>
+
+		<a href="https://en.wikipedia.org/wiki/Allele_frequency"target = "_blank">Allele frequency</a>
+		<p>Allele frequency is the relative frequency of an allele (variant of a gene) 
+			at a particular locus in a population, expressed as a fraction or percentage.</p>
+
+		<a href="https://en.wikipedia.org/wiki/Nucleotide_diversity"target = "_blank">Nucleotide Diversity</a>
+		<p>A measure of genetic diversity, the average pairwise number of nucleotide differences per site in a chromosome in a population.</p>
+		
+		<a href="https://en.wikipedia.org/wiki/Haplotype#Diversity"target = "_blank">Haplotype Diversity</a>
+		<p>A measure of heterozygosity, measure of uniqueness of a haplotype in a population, probability that two randomly
+			 sampled alleles are different. Close to 1 (the alleles are different); close to 0 (the alleles are closer). </p>
+
+		<a href="https://en.wikipedia.org/wiki/Tajima%27s_D"target = "_blank">Tajima’s D</a>
+		<p>Neutrality test, Compares the average number of pairwise differences along the base pairs in the population sample
+			 with the total number of variant sites in that sample. Negative (observing less variation than expected,
+			  selection removing variation); positive (observing more variation than expected,
+			   variation which is favoured but distinct from each other). </p>
+		
+		<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3759727/"target = "_blank">Hudson FST</a>
+		<p>Measure of population differentiation due to genetic structure. Close to 1 (no overlap in allele frequencies 
+			between the two populations); 0 (complete similarity between both populations); negative
+			 (there is more variation within than between the population) </p>
+
+	  </div>
+	</section><!-- End of Glossary Section -->
+
+
+	<!-- ======= Contact Us section  ======= -->
+
+	  <section id="#Contact_Us" class="Contact Us">
+		<div class="container">
+		<h2>Contact Us</h2>
+		<br>
+		<h4><a href="https://github.com/isabelrem/JIDA"target = "_blank">Github Repository</a></h4>
+		<br>
+		<h5>Janeesh Kaur Bansal :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; j.k.bansal@se21.qmul.ac.uk </h5>
+		<h5>Isabel Rachel Thompson :&nbsp;&nbsp; i.r.thompson@se21.qmul.ac.uk </h5>
+		<h5>Diego Pava :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d.a.pava@se21.qmul.ac.uk</h5>
+		<h5>Aravind Pattisapu :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; v.pattisapu@se21.qmul.ac.uk</h5>
+		<br>
+
+		<h5>Students of <a href="https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/bioinformatics-msc/"target = "_blank">QMUL Bioinformatics-MSc</a></h5>
+        
+		<br>
+	    </div>
+      </section><!-- End of Contact Us Section -->
+
+
+
+	<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+	<!-- Vendor JS Files -->
+	<script src="{{ url_for('static', filename='vendor/purecounter/purecounter.js') }}"></script>
+	<script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+	<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='vendor/php-email-form/validate.js') }}"></script>
+
+	<!-- Template Main JS File -->
+	<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+	{% endblock %}
+  </body>
+  </html>
+
+
