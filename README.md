@@ -1,4 +1,6 @@
 ##SOFTWARE DEVELOPMENT
+
+
 Created for the software development group project - QMUL MSc Bioinformatics 
 
 Web application that retrieves SNP information for a genomic region of interest in Homo sapiens chromosome 21 and calculates specific summary statistics for specified populations. Users can search by RS value, gene name or aliases and finally genomic positions. They can select the summary statistics of interest alongside which populations they would like data outputs for. Additionally, for the sliding window statistics calculations, the user can input their window size preference which would output the required results. 
